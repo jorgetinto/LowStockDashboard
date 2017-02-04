@@ -21,6 +21,5 @@ D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\bi
 D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\bin\System.Net.Http.Formatting.xml
 D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\bin\System.Web.Http.xml
 D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\bin\System.Web.Http.WebHost.xml
-D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\obj\Debug\LowStockDashboard.csprojResolveAssemblyReference.cache
 D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\obj\Debug\LowStockDashboard.dll
 D:\Proyectos\Estudio\AspNet\AngularAspMVC\LowStockDashboard\LowStockDashboard\obj\Debug\LowStockDashboard.pdb
