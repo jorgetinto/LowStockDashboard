@@ -1,5 +1,4 @@
 ﻿var MainController = function ($scope) {
-
     $scope.models = {
         locations: [
                         { id: "1", Location: "UK Warehouse" },
