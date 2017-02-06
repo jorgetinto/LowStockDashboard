@@ -100,7 +100,9 @@
     <Content Include="Scripts\angular-chart.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\loadingoverlay.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-1.1.2.min.js" />
+    <Content Include="SPA\ApiService.js" />
     <Content Include="SPA\App.js" />
     <Content Include="SPA\Controller\GridController.js" />
     <Content Include="SPA\Controller\MainController.js" />
@@ -113,9 +115,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\StockQueryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExceptionHandler.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\StockLevelItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

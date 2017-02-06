@@ -1,7 +1,7 @@
-﻿var GridController = function ($scope, $uibModal) {
+﻿var GridController = function ($scope, $uibModal, Api) {
     $scope.data = {
         lowstockdata: {
-            totalitems: 726,
+            totalitems: 0,
             currentPage: 1,
             itemsperpage: 10,
             data: []
@@ -9,28 +9,32 @@
     };
 
     function GetData() {
-        $scope.data.lowstockdata.data = [];
-        for (i = 0; i < $scope.data.lowstockdata.itemsperpage; i++) {
-            var currentLocation =  $scope.selectedLocation.Location;
 
-            var rndNum = ($scope.data.lowstockdata.currentPage * 10) + i;
-
-            $scope.data.lowstockdata.data.push({
-                SKU: "SKU" + rndNum,
-                ProductTitle: "Product Title " + rndNum,
-                OnOrder: rndNum * 2,
-                Due: rndNum - 1,
-                StockLevel: rndNum,
-                Location: currentLocation
+        if ($scope.selectedLocation != null) {
+            $scope.data.lowstockdata.data = [];
+            var request = {
+                LocationId: $scope.selectedLocation.LocationId,
+                PageNumber: $scope.data.lowstockdata.currentPage,
+                EntriesPerPage: $scope.data.lowstockdata.itemsperpage
+            };
+            SetBusy($("#LowStockLevelGrid"));
+            Api.PostApiCall("StockQuery", "GetLowStockLevel", request, function (event) {
+                SetBusy($("#LowStockLevelGrid"), true);
+                if (event.hasErrors == true) {
+                    alert("Error Getting data: " + event.error);
+                } else {
+                    $scope.data.lowstockdata.data = event.result.rows;
+                    $scope.data.lowstockdata.totalitems = event.result.TotalItems;
+                }
             });
         }
-    }
 
-    GetData();
+    }
 
     $scope.pageChanged = function () {
         GetData();
     }
+
 
     $scope.$watch('selectedLocation', function () {
         $scope.data.lowstockdata.currentPage = 1;
@@ -58,4 +62,4 @@
 
 }
 
-GridController.$inject = ['$scope','$uibModal'];
+GridController.$inject = ['$scope', '$uibModal', 'Api'];
